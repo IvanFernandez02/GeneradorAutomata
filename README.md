@@ -1,16 +1,37 @@
-# React + Vite
+# Generador de Autómatas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Editor visual de autómatas finitos (AFD/AFN) construido con React. Permite diseñar, simular y transformar autómatas en el navegador.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Editor visual** — Dibuja estados y transiciones en un lienzo SVG interactivo. Arrastra estados, crea transiciones curvas, ajusta su curvatura.
+- **Simulación de cadenas** — Evalúa cadenas paso a paso o al instante. Soporta transiciones epsilon y no determinismo.
+- **Conversión AFN → AFD** — Convierte cualquier AFN a AFD equivalente usando construcción de subconjuntos. Modo tutorial paso a paso disponible.
+- **Minimización de AFD** — Minimiza autómatas deterministas mediante refinamiento de particiones (Hopcroft-like).
+- **Tabla de transiciones** — Generada automáticamente en el panel lateral.
+- **Importar/Exportar** — JSON, JFLAP XML (.jff), SVG, PNG.
+- **Zoom y desplazamiento** — Zoom con rueda (centrado en cursor), arrastre con botón medio.
+- **Tema claro/oscuro** — Alternable desde la barra de herramientas.
+- **Persistencia** — El estado se guarda automáticamente en localStorage.
+- **Deshacer/Rehacer** — Historial completo (Ctrl+Z / Ctrl+Shift+Z).
 
-## React Compiler
+## Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite 8
+- lucide-react (iconos)
+- SVG nativo (sin librerías externas de canvas)
 
-## Expanding the ESLint configuration
+## Uso
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev      # Servidor de desarrollo (http://localhost:5173)
+npm run build    # Compilación para producción
+npm run preview  # Vista previa de la compilación
+npm run lint     # Linter
+```
+
+## Licencia
+
+MIT
