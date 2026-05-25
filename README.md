@@ -31,7 +31,3 @@ npm run build    # Compilación para producción
 npm run preview  # Vista previa de la compilación
 npm run lint     # Linter
 ```
-
-## Licencia
-
-MIT
