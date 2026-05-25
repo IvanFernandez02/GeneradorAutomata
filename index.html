@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>generador-de-automatas</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    window.onerror = function(msg, url, lineNo, columnNo, error) {
+      const errDiv = document.createElement('div');
+      errDiv.style.position = 'fixed';
+      errDiv.style.top = '0';
+      errDiv.style.left = '0';
+      errDiv.style.width = '100vw';
+      errDiv.style.height = '100vh';
+      errDiv.style.background = '#8b0000';
+      errDiv.style.color = 'white';
+      errDiv.style.zIndex = '999999';
+      errDiv.style.padding = '20px';
+      errDiv.style.fontFamily = 'monospace';
+      errDiv.style.whiteSpace = 'pre-wrap';
+      errDiv.innerText = 'CRASH REPORT:\n' + msg + '\n\n' + (error ? error.stack : '');
+      document.body.appendChild(errDiv);
+      return false;
+    };
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

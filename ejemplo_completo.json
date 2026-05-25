@@ -1,0 +1,79 @@
+{
+  "states": [
+    {
+      "id": "q0",
+      "name": "q0",
+      "x": 100,
+      "y": 200,
+      "isInitial": true,
+      "isAccepting": false
+    },
+    {
+      "id": "q1",
+      "name": "q1",
+      "x": 300,
+      "y": 200,
+      "isInitial": false,
+      "isAccepting": false
+    },
+    {
+      "id": "q2",
+      "name": "q2",
+      "x": 500,
+      "y": 200,
+      "isInitial": false,
+      "isAccepting": true
+    },
+    {
+      "id": "qTrampa",
+      "name": "Trampa",
+      "x": 300,
+      "y": 400,
+      "isInitial": false,
+      "isAccepting": false
+    }
+  ],
+  "transitions": [
+    {
+      "id": "t0",
+      "from": "q0",
+      "to": "q1",
+      "label": "a"
+    },
+    {
+      "id": "t1",
+      "from": "q0",
+      "to": "qTrampa",
+      "label": "b"
+    },
+    {
+      "id": "t2",
+      "from": "q1",
+      "to": "q2",
+      "label": "b"
+    },
+    {
+      "id": "t3",
+      "from": "q1",
+      "to": "qTrampa",
+      "label": "a"
+    },
+    {
+      "id": "t4",
+      "from": "q2",
+      "to": "qTrampa",
+      "label": "a, b"
+    },
+    {
+      "id": "t5",
+      "from": "qTrampa",
+      "to": "qTrampa",
+      "label": "a, b"
+    }
+  ],
+  "mode": "select",
+  "selectedIds": [],
+  "pendingTransition": null,
+  "stateCounter": 3,
+  "transitionCounter": 6
+}
